@@ -77,18 +77,18 @@ body{
 }
 .container .trainList{
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 10px;
+    align-items: normal;
+    flex-direction: column;    
+    padding-top: 10px;    
+    padding-left: 0px;
 }
 .container .trainList li{
-    width: 360px;
+    width: auto;
     height: 50px;
     font-size: 18px;
     background-color: #ffffff;
     border-radius: 7px;
-    color: #000000;
-    margin: 7px 0;
+    color: #000000;    
     display: flex;
     justify-content: space-between;
 }
@@ -96,7 +96,7 @@ body{
     line-height: 50px;    
 }
 .container .trainList li p:first-of-type{
-    padding-right: 10px;
+    padding-right: 0px;
 }
 .container .trainList li .material-icons{
     padding: 13px 15px;
@@ -124,19 +124,15 @@ body{
 </head>
 
 <body id="myPage" data-spy="scroll">
- 
 
   <!-- Container (Pricing Section) -->
-  <div id="Test" class="container-fluid">
-    <div class="text-center">
-      <hr width="80%" color="#987cb9" size="1">
+  <div id="Test" class="container-fluid text-center">    
+    <div class="row">
+      <div class="col-sm-12">
+        <hr width="80%" color="#987cb9" size="1">
       <h2>查詢</h2>
       <hr width="80%" color="#987cb9" size="1">
-    </div>
-    <div class="text-center">
-      
-    </div>
-    <div class="row">
+      </div>
       <div class="col-sm-12">
         <div class="wrap">
           <div class="nav">
@@ -166,14 +162,18 @@ body{
               <br />
               <input type="button" value="查詢" id="btn" class="btn btn-default">
             </div>
-          </div>
-          <div class="container">
-            <ul class="trainList">
-            </ul>
-          </div>
+          </div>          
         </div>
       </div>
-    </div>   
+      <div class="col-sm-12">
+        <div class="container">
+          <ul class="trainList" >
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+	
 
 <footer class="container-fluid text-center">
   <a href="/blog/" title="To Top">
