@@ -5,7 +5,7 @@
   <!-- Theme Made By www.w3schools.com -->
   <title>火車時刻表</title>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">  
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>  
   <style>
@@ -132,6 +132,9 @@ body{
         <hr width="80%" color="#987cb9" size="1">
       <h2>查詢</h2>
       <hr width="80%" color="#987cb9" size="1">
+      </div>
+      <div class="col-sm-12">
+        <p>日期: <input type="text" id="datepicker"></p>
       </div>
       <div class="col-sm-12">
         <div class="wrap">
@@ -270,16 +273,18 @@ body{
           }
         }
       }, false);
-
-      var xhr = new XMLHttpRequest();
-      xhr.open('get', 'https://ptx.transportdata.tw/MOTC/v3/Rail/TRA/DailyTrainTimetable/Today?$format=JSON', true);
+            
+      var xhr = new XMLHttpRequest();     
+      var JSON_url = "https://ptx.transportdata.tw/MOTC/v3/Rail/TRA/DailyTrainTimetable/TrainDate/"+train_data+"?%24top=30&%24format=JSON";
+      alert(JSON_url);
+      xhr.open('get', JSON_url, true);
       xhr.send(null);
       xhr.onload = function () {
         var data = JSON.parse(xhr.responseText).TrainTimetables;
         var dataLen = data.length;
         //每一筆資料代表一班車
 
-        function search(departure, arrive) {
+        function search(train_data,departure, arrive) {
           document.querySelector(".trainList").innerHTML = "";
           var myTrain = [];
           for (var a = 0; a < dataLen; a++) {
@@ -387,8 +392,10 @@ body{
             }
           }
         }
-        document.getElementById("btn").addEventListener("click", function () {
+        document.getElementById("btn").addEventListener("click", function () {    
           var departure;
+          var train_date = document.getElementById("datepicker").value;
+          alert(search_date);
           var option = document.querySelectorAll(".area option");
           for (let i = 0; i < option.length; i++) {
             if (option[i].selected) {
@@ -402,7 +409,7 @@ body{
               arrive = option2[i].value;
             }
           }
-          search(departure, arrive);
+          search(train,departure, arrive);
           document.querySelector(".wrap").style.height = "auto";
         }
           , false);
