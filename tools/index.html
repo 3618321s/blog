@@ -99,7 +99,7 @@
 
     .container .trainList li {
       width: auto;
-      height: 50px;
+      /* height: 50px; */
       font-size: 18px;
       background-color: #ffffff;
       border-radius: 7px;
@@ -116,9 +116,9 @@
       padding-right: 0px;
     }
 
-    .container .trainList li .material-icons {      
+    .container .trainList li .material-icons {
       width: 120px;
-      padding: 13px 5px;
+      padding: 13px 2px;
     }
 
     .container .trainList li .left {
@@ -486,8 +486,8 @@
             //if(myTrain[i].time1 > thisTime){    
               li.innerHTML = '<div class="left">' + '<p>' + no_id + '</p><span class="material-icons '
               + myTrain[i].color + '">'
-              + myTrain[i].TrainTypeName + '  ' + myTrain[i].TrainNo + '</span></div><div class="center"><p>'
-              + myTrain[i].time1 + '</p>' + '<span class="glyphicon glyphicon-arrow-right" style="top: 13px"> </span><p>' 
+              + myTrain[i].TrainTypeName + '  ' + myTrain[i].TrainNo + '</span></div><div class="right"><p>'
+              + myTrain[i].time1 + '</p>' + '<p><span class="glyphicon glyphicon-arrow-right" style="top: 13px"> </span></p><p>' 
               + myTrain[i].time2 + '</p></div><div class="right"><p>  '+ myTrain[i].difftime +'</p></div>';      
             // li.innerHTML = '<div class="left">' + '<p>' + no_id + '</p><span class="material-icons '
             //   + myTrain[i].color + '">'
